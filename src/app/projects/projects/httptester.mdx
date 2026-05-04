@@ -1,0 +1,53 @@
+---
+title: "HTTPTester: Real-Time Webhook Testing Tool"
+publishedAt: "2025-10-01"
+summary: "Built a free, open-source webhook testing service that generates unique URLs and delivers incoming HTTP requests instantly via browser push notifications, with zero server storage."
+images:
+  - "/images/projects/httptester/webpage.png"
+team:
+  - name: "Salinda"
+    role: "Software Engineer"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/in/salinda-gunarathna/"
+---
+
+## Overview
+
+HTTPTester is a free, open-source webhook testing and inspection tool. It solves a common developer problem: quickly verifying that a third-party service is sending the correct HTTP payload to your endpoint. Unlike traditional tools that store data on a server, HTTPTester generates a unique URL and delivers all incoming requests directly to your browser in real-time via **Web Push Notifications** — even when the tab is closed.
+
+All request data is encrypted end-to-end and stored only in your browser's **IndexedDB**, meaning zero server storage and complete privacy.
+
+[View Project on GitHub](https://github.com/SalindaGunarathna/httptester) | [Live Site](https://httptester.com)
+
+## Key Features
+
+- **Instant Push Notifications**: Incoming webhook payloads are delivered to the browser via the **Web Push API** the moment they arrive, with no need to keep the tab open or manually refresh.
+- **Zero Server Storage**: All data is encrypted end-to-end and persisted exclusively in the browser's **IndexedDB**. Nothing is stored on the server, ensuring full data privacy.
+- **No Registration Required**: Generate a unique webhook URL and start receiving requests immediately — no account, no sign-up.
+- **Built-in Test Tool**: Send configurable sample HTTP payloads directly from the UI to validate your webhook endpoint without needing an external service.
+- **Full Request Inspector**: Inspect complete request details for every incoming webhook — method, headers, query parameters, and raw body — in a clean interface.
+- **Open Source & Self-Hostable**: The entire codebase is publicly available on GitHub, allowing developers to self-host their own instance or contribute to the project.
+
+## Technologies Used
+
+- **Frontend**: Next.js, React
+- **Push Notifications**: Web Push API, Service Workers
+- **Local Storage**: IndexedDB (browser-native)
+- **Security**: End-to-end encryption of payloads
+- **Deployment**: Vercel
+
+## Challenges and Learnings
+
+The core technical challenge was delivering real-time webhook notifications reliably without any server-side storage. This required combining the **Web Push API** with **Service Workers** so that notifications reach the browser even when the application tab is not active.
+
+Designing the end-to-end encryption model — where the server acts purely as a message relay and never holds readable data — was a key architectural decision. This required careful key management entirely within the browser, using the **Web Crypto API**.
+
+Building this also deepened my understanding of how webhooks work in production systems and what developers actually need from a debugging tool: speed, privacy, and zero friction.
+
+## Outcome
+
+HTTPTester is live at [httptester.com](https://httptester.com) and fully open source. It provides a faster, more privacy-respecting alternative to tools like RequestBin and Webhook.site by combining real-time push delivery with client-side-only storage — features that competing tools do not offer.
+
+[View Project on GitHub](https://github.com/SalindaGunarathna/httptester)
+
+[Live Site](https://httptester.com)
