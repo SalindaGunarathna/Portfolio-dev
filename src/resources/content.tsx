@@ -111,6 +111,22 @@ const about: About = {
     title: "Work Experience",
     experiences: [
       {
+        company: "Zone4X IT Solutions (Pvt) Ltd",
+        timeframe: "Mar 2026 - Present",
+        role: "Software Engineer (Contract)",
+        achievements: [
+          <>
+            Developing backend services using <strong>Spring Boot</strong> and frontend
+            features with <strong>Angular</strong> for a civil engineering estimation platform.
+          </>,
+          <>
+            Working with <strong>AWS</strong> services including ECS, EC2, S3, and Lambda
+            for deployment and scalability.
+          </>,
+        ],
+        images: [],
+      },
+      {
         company: "Syntax Genie",
         timeframe: "Jul 2024 - Jan 2025",
         role: "Software Engineering Intern",
