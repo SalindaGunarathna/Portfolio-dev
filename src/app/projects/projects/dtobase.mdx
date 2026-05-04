@@ -1,0 +1,53 @@
+---
+title: "DTOBase: Java Annotation Processor for DTO Generation"
+publishedAt: "2025-09-01"
+summary: "Built an open-source Java annotation processor that automatically generates Data Transfer Objects (DTOs) and mapper classes from entity models, eliminating boilerplate mapping code."
+images:
+  - "/images/projects/basedto/dtoproject.png"
+team:
+  - name: "Salinda"
+    role: "Software Engineer"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/in/salinda-gunarathna/"
+---
+
+## Overview
+
+DTOBase is an open-source **Java annotation processor** that solves one of the most repetitive problems in backend development: writing DTO (Data Transfer Object) classes and their mapper methods by hand. By simply annotating your entity classes, DTOBase automatically generates the corresponding DTO classes and mapper code at compile time — with zero runtime overhead.
+
+The generated code appears under `target/generated-sources/annotations` and integrates seamlessly into any Maven or Gradle project, making it a drop-in productivity tool for Spring Boot and Jakarta EE applications.
+
+[View Project on GitHub](https://github.com/SalindaGunarathna/dtobase)
+
+## Key Features
+
+- **Multiple DTOs per Entity**: Use the repeatable `@Dto` annotation to generate several different DTO variants (e.g. `CreateDTO`, `ResponseDTO`) from a single entity class.
+- **Field-Level Control**: Precisely control which fields are included using `@IncludeInDto` and `@ExcludeInDto` annotations, with support for both annotated-only and include-all inclusion policies.
+- **Automatic Mapper Generation**: Optionally generate mapper classes with `toEntity()` and `updateEntity()` methods for seamless conversion between entities and DTOs.
+- **Builder Pattern Support**: Generated DTO classes can use the builder pattern for clean, readable object construction.
+- **Validation Annotation Copying**: Automatically carries over Jakarta or Javax validation annotations (`@NotNull`, `@Size`, etc.) from the entity fields to the generated DTOs.
+- **Null-Handling Strategies**: Configure how `updateEntity()` handles null values — either ignore them (partial updates) or apply them (full overwrites).
+- **Configurable Package Defaults**: Set default output packages for all generated classes via processor options.
+- **Zero Runtime Overhead**: All code generation happens at compile time via the Java annotation processing API — no reflection or proxies at runtime.
+
+## Technologies Used
+
+- **Language**: Java 17+
+- **Core API**: Java Annotation Processing API (`javax.annotation.processing`)
+- **Build Tools**: Maven, Gradle
+- **Distribution**: JitPack
+- **Optional Integration**: Lombok, Jakarta EE / Javax validation
+
+## Challenges and Learnings
+
+The primary challenge was working within the constraints of the **Java Annotation Processing API** — specifically generating syntactically correct source files programmatically using `javax.lang.model` and `JavaPoet`-style string construction, while correctly resolving type information at compile time before classes are fully loaded.
+
+Handling edge cases was also demanding: entities with inheritance, fields carrying complex generic types, and Lombok-generated accessors all required special treatment. Designing the `@ExcludeInDto` vs `@IncludeInDto` precedence model required careful API design to stay intuitive while remaining flexible.
+
+This project deepened my understanding of how Java compilers work, how annotation processors hook into the build lifecycle, and what it takes to build a developer tool that others can rely on.
+
+## Outcome
+
+DTOBase is published and installable via **JitPack** (v0.1.1). It provides a clean alternative to manual DTO boilerplate and MapStruct-style configuration for projects that want lightweight, compile-time generation with minimal setup. The library is fully open source and available on GitHub.
+
+[View Project on GitHub](https://github.com/SalindaGunarathna/dtobase)
