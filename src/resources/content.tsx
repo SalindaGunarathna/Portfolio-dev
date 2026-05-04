@@ -57,15 +57,14 @@ const home: Home = {
         </Text>
       </Row>
     ),
-    href: "/work/SHEAF_Secure,_Post-Quantum_Federated_Learning", 
+    href: "/projects/SHEAF_Secure,_Post-Quantum_Federated_Learning",
   },
   subline: (
     <>
-      I'm Salinda, a final-year computer engineering 
-      undergraduate passionate about cloud technologies
-      , DevOps, and secure system design. I love
-       creating robust applications that scale.
-      
+      I'm Salinda, a Computer Engineer specialising in full-stack
+      development, cloud technologies, and DevOps practices. I build
+      secure, scalable systems backed by strong cryptography knowledge,
+      and integrate AI to deliver real-world solutions.
     </>
   ),
 };
@@ -91,21 +90,19 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-I am a final-year Computer Engineering student and soon-to-be fresh
- graduate with a strong passion for software and DevOps engineering.
-  I’m deeply committed to
- designing and developing reliable, scalable applications while 
- continuously exploring cloud technologies, AI integration, and system security.
-
-With a solid background in cryptography, I’m particularly
- interested in secure system design and data protection. 
- I enjoy tackling complex technical challenges, learning 
- emerging technologies, and creating impactful, real-world solutions.
-
-I am now seeking a full-time opportunity where I can 
-apply my skills, contribute to innovative projects, 
-and grow as a professional engineer in a dynamic and
- forward-thinking environment.
+        I am a Computer Engineer with hands-on experience in full-stack development,
+        cloud technologies, and DevOps practices. I design and build reliable,
+        scalable applications — from frontend interfaces to backend services and
+        cloud-native infrastructure.
+        <br /><br />
+        With a strong foundation in cryptography and secure system design, I apply
+        security-first thinking throughout the development lifecycle. I am also
+        actively integrating AI and machine learning techniques into practical
+        solutions that address real-world problems.
+        <br /><br />
+        I am currently open to new opportunities where I can contribute to
+        innovative projects, grow as an engineer, and deliver meaningful impact
+        in a forward-thinking team.
       </>
     ),
   },
@@ -471,12 +468,10 @@ const blog: Blog = {
 };
 
 const work: Work = {
-  path: "/work",
-  label: "Work",
+  path: "/projects",
+  label: "Projects",
   title: `Projects – ${person.name}`,
   description: `Design and dev projects by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
-  // All projects will be listed on the /home and /work routes
 };
 
 const gallery: Gallery = {

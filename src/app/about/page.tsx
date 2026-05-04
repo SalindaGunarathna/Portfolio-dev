@@ -116,6 +116,9 @@ export default function About() {
               <Icon onBackground="accent-weak" name="globe" />
               {person.location}
             </Row>
+            <Tag size="l" variant="success">
+              Open to Work
+            </Tag>
             {person.languages && person.languages.length > 0 && (
               <Row wrap gap="8">
                 {person.languages.map((language, index) => (
